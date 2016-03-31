@@ -8,17 +8,20 @@
     "url": "git@github.com:aptoma/node-timer.git"
   },
   "scripts": {
-    "test": "jscs index.js",
+    "test": "mocha index.test.js",
+    "watch": "mocha --watch 'index.test.js'",
+    "lint": "eslint index.js",
+    "ci": "npm run lint && npm test",
     "release": "release-it -n -i patch",
     "release:minor": "release-it -n -i minor",
     "release:major": "release-it -n -i major"
   },
   "author": "Gunnar Lium <gunnar@aptoma.com>",
   "license": "MIT",
-  "jscsConfig": {
-    "preset": "yandex",
-    "disallowMultipleVarDecl": "exceptUndefined",
-    "maximumLineLength": null,
-    "validateIndentation": "\t"
+  "devDependencies": {
+    "@aptoma/eslint-config": "^3.0.0",
+    "chai": "^3.5.0",
+    "eslint": "^2.5.3",
+    "mocha": "^2.4.5"
   }
 }
