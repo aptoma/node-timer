@@ -17,7 +17,7 @@ describe('timer', function () {
 			var elapsed = timer('foo');
 			var timerEvent = elapsed();
 
-			assert.deepEqual(['name', 'summary', 'msec', 'hrtime'], Object.keys(timerEvent));
+			assert.deepEqual(['name', 'summary', 'msec', 'hrtime', 'time'], Object.keys(timerEvent));
 			assert.equal('foo', timerEvent.name);
 		});
 	});

@@ -8,6 +8,7 @@ module.exports = start;
  * @property {string} summary
  * @property {float} msec
  * @property {Array} hrtime
+ * @property {String} time Javascript timestamp of the end of the event
  */
 
 /**
@@ -40,7 +41,8 @@ function elapsed(startTime, name) {
 		name: name,
 		summary: name + ': ' + parseFloat(msec.toFixed(3)) + 'ms',
 		msec: msec,
-		hrtime: diff
+		hrtime: diff,
+		time: Date.now()
 	};
 }
 
